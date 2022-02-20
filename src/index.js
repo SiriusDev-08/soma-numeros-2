@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './soma.css'; 
-import SomaNum from './SomaTeste'; 
+import './app.css'; 
+import SomaNum from './App.js'; 
 
 //Qual a diferença em importar {App} e importar App. 
 

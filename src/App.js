@@ -1,59 +1,42 @@
-import React from 'react'; 
+import React, {useState, useEffect} from 'react';
+import './app.css'; 
 
-const list = [
-  {
-    title: 'React', 
-    url: 'https:\\reactjs.org',
-    author: 'Jordan Walke',
-    num_comments: 3, 
-    points: 4, 
-    objectID: 0,
-  },
+function SomaNum (props) {
 
-  {
-    title: 'Redux',
-    url:'https://redux.js.org/',
-    author: 'Dan Abramov, Andrew Clark',
-    num_comments: 2, 
-    points: 5, 
-    objectID: 1,
-  },
-];
+    //this.props.name = "Minha soma de dois números!"; 
+    const [num1, setNum1] = useState(0);
+    const [num2, setNum2] = useState (0); 
+    const [soma,setSoma] = useState(0); 
+
+    useEffect(() => {
+        console.log(11); 
+    }, [num1])
+
+    useEffect (() => {
+        console.log(22);
+    }, [num2])
 
 
-// Isso são atributos dos objetos?
+    return (
+        <div>
+            <h1> Meu aplicativo de soma de Números ! </h1>
 
-function App() {
-  return (
-    <div>
-      <h1> 
-        <h1> My front-end Dev Stories</h1>
+            <hr /> 
+          
+          <input id='TN1' type='number1' className='num1' onChange={(evt) => setNum1(evt.target.value)} value={num1}/>
 
-      </h1>
+          <input id='TN2' type='number2' className='num2' onChange={(evt) => setNum2(evt.target.value)} value={num2}/>
+          <div>
+            <button className='click' onClick = {
+                () => setSoma(parseInt(num1) + parseInt(num2))
+            } >
+                 +
+            </button>
 
-      <label htmlFor='search'>Search: </label>
-      <input id='search' type='text' />
-      
-      <hr /> 
-    
-      {list.map(function(item) {
-        return (
-          <div key={item.objectID}> {/* Comentário bem sucedido */}
-            <span>
-              <a href={item.url}> {item.title}</a>
-            </span> 
-            <span> {item.author} </span>
-            <span> {item.num_comments}</span>
-            <span> {item.points} </span>
-          </div>
-        );
+            <h2 className='result'> {soma}  </h2>
+            </div> 
+        </div>
+    ); 
+} 
 
-        
-
-      })}
-  </div> 
-  )
-}
-
-
-export default App;
+export default SomaNum;  
