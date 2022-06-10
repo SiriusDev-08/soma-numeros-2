@@ -19,7 +19,8 @@ function SomaNum (props) {
 
     return (
         <div>
-            <h1> Meu aplicativo de soma de Números ! </h1>
+
+           <h1>  {process.env.REACT_APP_TITLE} </h1> 
 
             <hr /> 
           
@@ -35,7 +36,12 @@ function SomaNum (props) {
 
             <h2 className='result'> {soma}  </h2>
             </div> 
+
+            <hr /> 
+
+            <h2> {process.env.REACT_APP_FOOTER} </h2>
         </div>
+
     ); 
 } 
 
